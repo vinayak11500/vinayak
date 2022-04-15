@@ -17,7 +17,7 @@ const Dropdown=({data,handleChange,value})=>{
         //                     })}
         //                     </select>
         <DD search options={ddOptions} name={id} id={id} selection onChange={handleChange} 
-        defaultValue={defaultValue} required={required} />
+        defaultValue={defaultValue} required={required} data-testid="Dropdown"/>
     )
 }
 export default Dropdown;

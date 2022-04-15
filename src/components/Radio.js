@@ -11,7 +11,7 @@ const Radio=({data,handleChange,value})=>{
     //         </span>
     //     })
     return options.map((val,index)=>{return <RRadio key={val} className="marginright1" label={val} name={id} id={id+val} onChange={handleChange} 
-    value={val} checked={val===value} required={required}
+    value={val} checked={val===value} required={required} data-testid="Radio"
     />})
 }
 export default Radio;

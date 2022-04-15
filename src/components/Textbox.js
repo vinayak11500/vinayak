@@ -4,7 +4,7 @@ const Textbox=({data,handleChange,value})=>{
     const {type,placeholder,maxlength,id,required}=data
     return (
         <>
-            <Input type={type} placeholder={placeholder} maxLength={maxlength} 
+            <Input  data-testid="textbox" type={type} placeholder={placeholder} maxLength={maxlength} 
                         id={id} name={id} onChange={handleChange} 
                         required={required} value={value}/>
         </>

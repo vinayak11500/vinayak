@@ -23,7 +23,6 @@ export const userDetails=[
         id:'lname',
         required:true
     },
-    
     {
         title:'Gender',
         type:'radio',
