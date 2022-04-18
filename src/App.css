@@ -48,3 +48,12 @@
 .required{
   color:red;
 }
+ul{
+  list-style-type: none;
+}
+.flex{
+  display: flex;
+}
+.mlr2{
+  margin:0 2%;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { userDetails } from "../utils/inputParameters";
 import Dropdown from "./Dropdown";
 import Radio from "./Radio";
@@ -12,6 +12,12 @@ const UserForm=()=>{
     let initialState={};
     let dispatch=useDispatch();
 
+    useEffect(()=>{
+        userDetails.forEach((val,index)=>{
+            initialState[val.id]=val.defaultValue ? val.defaultValue :''
+        })
+        
+    },[])
     const [userData,setUserData]=useState(initialState);
     
     const handleChange=(e,{name,value})=>{

@@ -1,23 +1,22 @@
-import { connect } from 'react-redux';
 import './App.css';
-import {getUserDetails} from './actions/actions';
 import AddData from './components/AddData';
 import ViewData from './components/ViewData';
-
+import {BrowserRouter as Router,Routes,Route, Link} from 'react-router-dom'
 function App(props) {
     return (
     <div className="App1">
-      <AddData/>
-      <ViewData/>
+      <Router>
+          <ul className='flex'>
+            <li className='mlr2'><Link to="/addData">Add Data</Link></li>
+            <li className='mlr2'><Link to="/viewData">View Data</Link></li>
+          </ul>
+        <Routes>
+          <Route exact path="/addData" element={<AddData/>}></Route>
+          <Route exact path="/viewData" element={<ViewData/>}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
-const mapStateToProps=state=>({
-  temp:state.temp,
-  user:state.user,
-})
-const mapDispatchToProps=dispatch=>({
-  getUserDetails:()=>dispatch(getUserDetails())
-})
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default App;

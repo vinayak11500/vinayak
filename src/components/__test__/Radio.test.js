@@ -12,21 +12,24 @@ describe("Radio Component",()=>{
         required:true
     }
     const handleChange=jest.fn();
-    const value="Male";
+    const value="";
 
     render(<Radio handleChange={handleChange} value={value} data={data}/>)
     const male=screen.getByLabelText("Male") //as HTMLInputElement;
     const female=screen.getByLabelText("Female") //as HTMLInputElement;
     
     test("Radio rendering",()=>{
-        //expect(female).toBeInTheDocument();
+        expect(female).toBeInTheDocument();
+        expect(male).toBeInTheDocument();
+    })
+    
+    test('default value',()=>{
         expect(female).not.toBeChecked();
-        //fireEvent.click(female);
-        //expect(female).toBeChecked();
-        
-        //expect(male).not.toBeChecked();
-        //fireEvent.click(radio);
-        //expect(radio.checked).toEqual(true);
+        expect(male).not.toBeChecked();
     })
 
+    test('change value',()=>{
+        fireEvent.click(female);
+        expect(female).toBeChecked();
+    })
 })

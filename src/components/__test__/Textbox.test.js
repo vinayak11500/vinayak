@@ -16,19 +16,20 @@ describe("Textbox component",()=>{
         id:'fname',
         required:true
     }
-    const value="abc"
+    const value=""
 
     render(<Textbox data={data} handleChange={handleChange} value={value}/>)
-    const textbox=screen.getByTestId("textbox").querySelector('input');;
+    const textbox=screen.getByTestId("textbox")
     test("Textbox rendering",()=>{
         expect(textbox).toBeInTheDocument();
     })
 
     test("Textbox text",()=>{
-        expect(textbox).toHaveTextContent("");
-        fireEvent.change(textbox,{target:{value:"abc"}});
-        expect(textbox).toHaveTextContent("abc");
-        
+        const elementInput=textbox.children[0];
+        console.log('textbox',elementInput.textContent);
+        expect(elementInput).toHaveValue(value);
+        fireEvent.change(elementInput,{target:{value:"abc"}});
+        expect(elementInput).toHaveValue("abc");
     })
 
 })

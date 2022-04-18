@@ -9,7 +9,7 @@ const Dropdown=({data,handleChange,value})=>{
         }
     })
     return(
-        // <select defaultValue={defaultValue} required={required}>
+        // <select defaultValue={defaultValue} required={required} data-testid="Dropdown">
         //                     {options.map((value,idx)=>{
         //                         return  <option name={id} value={value} key={value} 
         //                         onChange={handleChange}>{value} 
